@@ -18,10 +18,14 @@ def points_for_word(word):
 
 def assign_player_letters():
     player_letters = []
-    alphabet = string.ascii_letters
-    for i in range(7):
-        chosen_letter = random.choice(alphabet).upper()
+    letter_distribution = 'E' * 12 + ''.join(['A','I'] * 9) + 'O' * 8 + ''.join(['N','R','T'] * 6) + ''.join(['L','S','U','D'] * 4) \
+    + 'G' * 3 + ''.join(['B', 'C', 'M', 'P', 'F', 'H', 'V', 'W', 'Y'] * 2) + ''.join(['K', 'J', 'X', 'Q', 'Z'] * 1)
+
+    letter_count = 7
+    for i in range(letter_count):
+        chosen_letter = random.choice(letter_distribution).upper()
         player_letters.append(chosen_letter)
+    print(letter_distribution)
     return player_letters
 
 print(points_for_letter('w'))
