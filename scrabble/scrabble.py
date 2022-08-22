@@ -1,5 +1,4 @@
 import random
-from itertools import permutations
 
 def read_dictionary():
     dictionary_file = open('dictionary.txt','r')
@@ -56,6 +55,8 @@ PLAYER_LETTERS = assign_player_letters()
 dictionary_list = read_dictionary()
 filtered_dictionary = list(filter(filter_dictionary,dictionary_list))
 
+
 print(PLAYER_LETTERS)
 print(filtered_dictionary)
+print(max(filtered_dictionary,key=len))
 
