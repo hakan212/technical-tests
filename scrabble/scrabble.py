@@ -1,4 +1,5 @@
-
+import string
+import random
 
 def points_for_letter(letter):
     letter_dict = {'E':1, 'A':1, 'I':1, 'O':1, 'N':1, 'R':1, 'T':1, 'L':1, 'S':1, 'U':1,'D':2,'G':2,
@@ -15,5 +16,14 @@ def points_for_word(word):
     return points_for_word
 
 
+def assign_player_letters():
+    player_letters = []
+    alphabet = string.ascii_letters
+    for i in range(7):
+        chosen_letter = random.choice(alphabet).upper()
+        player_letters.append(chosen_letter)
+    return player_letters
+
 print(points_for_letter('w'))
 print(points_for_word('WALL'))
+print(assign_player_letters())
