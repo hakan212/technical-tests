@@ -1,5 +1,15 @@
-import string
 import random
+from itertools import permutations
+
+def read_dictionary():
+    dictionary_file = open('dictionary.txt','r')
+    dictionary = dictionary_file.read()
+    dictionary_list = dictionary.split('\n')
+    return dictionary_list
+
+def filter_dictionary(player_letters):
+    
+
 
 def points_for_letter(letter):
     letter_dict = {'E':1, 'A':1, 'I':1, 'O':1, 'N':1, 'R':1, 'T':1, 'L':1, 'S':1, 'U':1,'D':2,'G':2,
@@ -25,9 +35,14 @@ def assign_player_letters():
     for i in range(letter_count):
         chosen_letter = random.choice(letter_distribution).upper()
         player_letters.append(chosen_letter)
-    print(letter_distribution)
     return player_letters
 
-print(points_for_letter('w'))
-print(points_for_word('WALL'))
-print(assign_player_letters())
+
+
+
+player_letters = assign_player_letters()
+dictionary_list = read_dictionary()
+
+
+print(len(possible_combinations))
+print(len(set(possible_combinations)))
