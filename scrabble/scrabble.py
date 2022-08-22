@@ -7,8 +7,20 @@ def read_dictionary():
     dictionary_list = dictionary.split('\n')
     return dictionary_list
 
-def filter_dictionary(player_letters):
+def filter_dictionary(dictionary_word):
+    max_word_length = 7
+    word_less_than_max = len(dictionary_word) <= max_word_length
     
+
+    letters_in_word = True
+    for letter in PLAYER_LETTERS:
+        if letter.lower() in dictionary_word:
+            continue
+        else: 
+            letters_in_word = False
+            break
+                    
+    return word_less_than_max and letters_in_word
 
 
 def points_for_letter(letter):
@@ -40,9 +52,10 @@ def assign_player_letters():
 
 
 
-player_letters = assign_player_letters()
+PLAYER_LETTERS = assign_player_letters()
 dictionary_list = read_dictionary()
+filtered_dictionary = list(filter(filter_dictionary,dictionary_list))
 
+print(PLAYER_LETTERS)
+print(filtered_dictionary)
 
-print(len(possible_combinations))
-print(len(set(possible_combinations)))
